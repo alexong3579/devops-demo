@@ -8,6 +8,6 @@ public class DemoController {
 
     @GetMapping("/hello")
     public String hello() {
-        return "DevOps demo - AUTOMATED DEPLOYMENT WORKS! 🚀";
+        return "DevOps demo - AUTOMATED DEPLOYMENT WORKS! 🚀 test";
     }
 }
