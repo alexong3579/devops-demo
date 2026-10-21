@@ -82,6 +82,9 @@ workflows:
       - test:
           requires:
             - build
+      - snyk_scan:
+          requires:
+            - test
       - publish:
           context: docker-hub
           requires:
