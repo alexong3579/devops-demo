@@ -75,18 +75,16 @@ jobs:
             npx --yes @railway/cli redeploy --service "$RAILWAY_SERVICE_ID" --from-source --yes
             echo "Railway is now pulling $DOCKER_USERNAME/devops-demo:latest from Docker Hub."
 
-workflows:
-  build_test_publish_deploy:
-    jobs:
-      - build
-      - test:
-          requires:
-            - build
-      - publish:
-          context: docker-hub
-          requires:
-            - test
-      - deploy:
-          context: docker-hub
-          requires:
-            - publish
+  workflows:
+    build_test_publish_deploy:
+      jobs:
+        - build
+        - test:
+            requires:
+              - build
+        - publish:
+            requires:
+              - test  # Changed from requiring snyk_scan
+        - deploy:
+            requires:
+              - publish
