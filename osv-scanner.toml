@@ -1,0 +1,7 @@
+# Vulnerabilities we have reviewed and accepted FOR NOW.
+# Every entry needs a reason and an expiry date.
+
+[[IgnoredVulns]]
+id = "GHSA-xxxx-xxxx-xxxx"              # copy the exact ID from your alert
+ignoreUntil = 2026-12-31T00:00:00Z      # after this date the finding comes back
+reason = "Reviewed by <your name>: <why it's acceptable for now>. Fix tracked in issue #<number>."
